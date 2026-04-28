@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso de HTML5 y CSS3 - Contacto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
+    </style>
+</head>
+<body>
+    <div id="page">
+        <header>
+            <h1><img src="imgs/logo.png" alt="Logo" />Curso de HTML5 y CSS3</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li id="contenidos"><a href="index.html">Contenidos</a></li>
+                <li id="videos"><a href="videos.html">Vídeos</a></li>
+                <li id="contacto">Contacto</li>
+            </ul>
+        </nav>
+
+        <main id="mainContacto">
+            <div id="contenedorFormulario">
+                <h1>Contáctenos</h1>
+                <form id="formContacto" action="#" method="post" novalidate>
+                    
+                    <input type="text" id="nombre" name="nombre" placeholder="Escriba su nombre" required list="listaNombres">
+                    <label></label> <datalist id="listaNombres">
+                        <option value="alex">
+                        <option value="juan">
+                        <option value="ana">
+                        <option value="pedro">
+                    </datalist>
+
+                    <input type="email" id="email" name="email" placeholder="Escriba su email" required>
+                    <label></label>
+
+                    <textarea id="mensaje" name="mensaje" placeholder="Su mensaje..." required></textarea>
+
+                   <button type="submit" id="enviar">Enviar</button>
+                </form>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <p>Danica Vargas Arévalo &copy; 2026. Curso de HTML5 y CSS3.</p>
+        </footer>
+    </div>
+    <script src="scripts/contacto.js"></script>
+</body>
+</html>

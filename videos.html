@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de HTML5 y CSS3 - Vídeos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reproductor.css">
+</head>
+<body>
+    <div id="page">
+
+        <header>
+            <h1><img src="imgs/logo.png" alt="Logo HTML5 CSS3 JS" />Curso de HTML5 y CSS3</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <!-- En videos.html, Contenidos enlaza a index.html -->
+                <li id="contenidos"><a href="index.html">Contenidos</a></li>
+                <li id="videos">
+                    <a href="videos.html">Vídeos</a>
+                    <ul>
+                        <li><a href="videos.html">Vídeo 1</a></li>
+                        <li><a href="videos.html">Vídeo 2</a></li>
+                        <li><a href="videos.html">Vídeo 3</a></li>
+                    </ul>
+                </li>
+                <li id="contacto"><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div id="reproductor">
+                <video id="medio" width="720" height="400">
+                    <source src="media/trailer.mp4">
+                    <source src="media/trailer.ogg">
+                </video>
+                <div id="barra">
+                    <div id="progreso"></div>
+                </div>
+            </div>
+
+            <nav>
+                <input type="button" id="reiniciar"    value="reiniciar">
+                <input type="button" id="retrasar"     value="&laquo;">
+                <input type="button" id="play"         value="&#9658;">
+                <input type="button" id="adelantar"    value="&raquo;">
+                <input type="button" id="silenciar"    value="silenciar">
+                <label>Volumen</label>
+                <input type="button" id="menosVolumen" value="-">
+                <input type="button" id="masVolumen"   value="+">
+            </nav>
+        </main>
+
+        <footer id="footer">
+            <p>
+               Danica Vargas Arévalo &copy; 2026. Curso de HTML5 y CSS3.<br />
+                Impartido para: <a href="#">CEFIRE - Específico de Formación Profesional</a>
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="scripts/reproductor.js"></script>
+</body>
+</html>

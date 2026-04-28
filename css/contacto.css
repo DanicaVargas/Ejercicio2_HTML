@@ -1,0 +1,116 @@
+#mainContacto {
+    /* Asegúrate de que esta sea la imagen que tiene los logos de fondo */
+    background: url("../imgs-curso/fondoForm.jpg") no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    width: 100%;
+    min-height: 500px; /* Un poco más alto para que luzca */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del Formulario (El cuadro gris transparente) */
+#contenedorFormulario {
+    position: relative;
+    display: inline-block;
+    margin: 50px;
+    width: 600px;
+    padding: 30px 50px;
+    /* rgb(200, 200, 200) con 0.7 de opacidad como pide el ejercicio */
+    background-color: rgba(200, 200, 200, 0.7); 
+    text-align: left;
+    box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 5px; /* Suaviza las esquinas */
+}
+
+/* Título "Contáctenos" */
+#contenedorFormulario h1 {
+    position: absolute;
+    top: -16px;
+    left: 420px; /* Ajustado para que no se corte a la derecha */
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Aguafina Script', cursive;
+    font-style: italic;
+    color: #333;
+    letter-spacing: 5px;
+    text-shadow: 0px 0px 2px #777;
+    padding: 5px 15px;
+    white-space: nowrap;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilos de los campos (Nombre, Email, Mensaje) */
+#formContacto input:not([type="submit"]), 
+#formContacto textarea {
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    /* Fondo semitransparente para los campos también */
+    background-color: rgba(255, 255, 255, 0.3); 
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.3), inset 0px 0px 40px rgba(0,0,0,0.1);
+    color: #000;
+    font-weight: bold;
+    padding: 8px 4px 8px 45px;
+    margin-bottom: 15px;
+    transition: all 0.4s ease-in;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    width: 100%; /* Para que ocupen el ancho del contenedor */
+    box-sizing: border-box;
+}
+
+/* Nombres y Correo (Tamaños específicos) */
+#nombre, #email {
+    height: 40px; /* Un poco más de aire */
+    width: 350px; 
+}
+
+/* Rutas de iconos corregidas */
+#nombre { background-image: url("../imgs-curso/icon-nombre.png"); }
+#email { background-image: url("../imgs-curso/icon-correo.png"); }
+
+/* Foco: se vuelven más opacos y anchos */
+#nombre:focus, #email:focus {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 12px rgb(255, 255, 255);
+    outline: none;
+}
+
+/* Mensaje (Textarea) */
+#mensaje {
+    font-family: Arial, sans-serif;
+    height: 150px;
+    background-image: url("../imgs-curso/icon-mensaje.png");
+    background-position: 10px 10px;
+}
+
+#mensaje:focus {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 12px rgb(255, 255, 255);
+}
+
+/* El asterisco de requerido */
+input[required] + label::after {
+    content: ' *';
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    left: 5px;
+}
+
+/* Botón Enviar con el Gradiente pedido */
+#enviar {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: 1px solid #434343;
+    color: white;
+    background: linear-gradient(to bottom, #5e5e5e, #2a2a2a);
+    box-shadow: inset 0px 1px 1px #353535;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#enviar:hover {
+    background: linear-gradient(to top, #5e5e5e, #2a2a2a);
+}
