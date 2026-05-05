@@ -26,7 +26,6 @@ header {
     padding: 15px 20px;
 }
 
-
 header h1 {
     font-family: Courier, monospace;
     font-size: 1.8em;
@@ -174,25 +173,29 @@ nav > ul > li > a {
     border-image-repeat: stretch;
     text-align: center;
     color: #333;
-     margin-top: 30px;
+    margin-top: 30px;
+    position: relative; /* Asegura el contexto posicional para las chinchetas */
 }
 
-
+/* ESTADO INICIAL: Los artículos 1 y 3 empiezan con rotación 0deg 
+   para inclinarse dinámicamente mediante las animaciones de JS.
+*/
 .article-first {
-    transform: rotate(-2deg);
-    -webkit-transform: rotate(-2deg);
-    -moz-transform: rotate(-2deg);
-    -o-transform: rotate(-2deg);
-    -ms-transform: rotate(-2deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
 }
 
 .article-third {
-    transform: rotate(2deg);
-    -webkit-transform: rotate(2deg);
-    -moz-transform: rotate(2deg);
-    -o-transform: rotate(2deg);
-    -ms-transform: rotate(2deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
 }
+
 .article_header {
     position: relative;
 }
@@ -208,6 +211,7 @@ nav > ul > li > a {
     z-index: 3;
 }
 
+/* Posiciones estáticas de reserva si JS no llega a cargar */
 .article-first  .chincheta { left: 199px; }
 .article-second .chincheta { left: 120px; }
 .article-third  .chincheta { left: 30px; }
@@ -231,7 +235,6 @@ nav > ul > li > a {
     padding: 0 5px;
 }
 
-
 #footer {
     background-color: rgb(0, 132, 255);
     color: white;
@@ -244,4 +247,108 @@ nav > ul > li > a {
 
 #footer a {
     color: white;
+}
+
+/* ==========================================================================
+   EJERCICIO 3: ROTACIÓN INFINITA DEL LOGO DE LA CABECERA (3D Y-axis)
+   ========================================================================== */
+header h1 img {
+    animation: rotarLogo 5s infinite linear;
+}
+
+@keyframes rotarLogo {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+/* ==========================================================================
+   EJERCICIO 4: ANIMACIONES ENCADENADAS DINÁMICAS (JS TRIGGERED)
+   ========================================================================== */
+.article-first {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+
+.article-third {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+
+/* Forzamos a que las chinchetas animadas mantengan su estado final al terminar */
+.article .chincheta1, 
+.article .chincheta2, 
+.article .chincheta3 {
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+/* --- CLASES DE ANIMACIÓN CON MÁXIMA ESPECIFICIDAD PARA EVITAR BLOQUEOS --- */
+
+/* 1. Primera chincheta: viaja de 0px a 199px */
+.article-first .chincheta1 {
+    animation-name: mueveChincheta1;
+    animation-duration: 1s;
+}
+
+/* 2. Primer contenedor (article-first): se inclina -2 grados */
+.article-first.article1 {
+    animation-name: animArticle1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    transform-origin: top center;
+}
+
+/* 3. Segunda chincheta: viaja de 0px a 120px */
+.article-second .chincheta2 {
+    animation-name: mueveChincheta2;
+    animation-duration: 1s;
+}
+
+/* 4. Tercera chincheta: viaja de 0px a 30px */
+.article-third .chincheta3 {
+    animation-name: mueveChincheta3;
+    animation-duration: 1s;
+}
+
+/* 5. Tercer contenedor (article-third): se inclina 2 grados */
+.article-third.article3 {
+    animation-name: animArticle3;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    transform-origin: top center;
+}
+
+/* --- KEYFRAMES REQUERIDOS --- */
+
+@keyframes mueveChincheta1 {
+    from { left: 0px; }
+    to { left: 199px; }
+}
+
+@keyframes animArticle1 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-2deg); }
+}
+
+@keyframes mueveChincheta2 {
+    from { left: 0px; }
+    to { left: 120px; }
+}
+
+@keyframes mueveChincheta3 {
+    from { left: 0px; }
+    to { left: 30px; }
+}
+
+@keyframes animArticle3 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(2deg); }
 }
