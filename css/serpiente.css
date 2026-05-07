@@ -38,6 +38,17 @@ nav ul li ul {
     animation-fill-mode: forwards;
 }
 
+@media (max-width: 1024px) {
+    #contenedorVideojuego {
+        margin: 5%;
+        padding: 2% 5%;
+        width: 80%;
+    }
+    #lienzo {
+        width: 80%;
+        height: auto; /* Para mantener proporción */
+    }
+}
 
 
 

@@ -74,3 +74,39 @@ input[type="button"]:hover
 	height: 16px;
 	background: rgba(0,0,150,.2);
 }
+/* --- EJERCICIO 4: Vídeos Adaptables --- */
+#reproductor {
+    float: none;
+    display: inline-block;
+    width: 95%;
+    max-width: 720px;
+    margin: 20px auto;
+}
+
+video {
+    width: 95%;
+    max-width: 720px;
+    height: auto;
+    margin: 5px;
+}
+
+/* Barra de navegación del vídeo */
+#reproductor nav {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    /* Eliminamos el ancho fijo si lo tenía */
+}
+
+#barra {
+    width: 95%;
+    max-width: 705px;
+    padding: 0;
+}
+
+/* Media query específica para los botones del reproductor */
+@media (max-width: 970px) {
+    #reproductor nav button {
+        display: inline-block;
+    }
+}

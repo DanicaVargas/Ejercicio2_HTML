@@ -352,3 +352,19 @@ header h1 img {
     from { transform: rotate(0deg); }
     to { transform: rotate(2deg); }
 }
+
+@media  all and (max-width: 475px) {
+    /* El menú está escondido por defecto */
+    nav ul {
+        display: none;
+    }
+
+    /* Cuando el JS le añade la clase .desplegado, se muestra */
+    nav ul.desplegado {
+        display: block !important;
+        background-color: #333; /* O el color que prefieras */
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+    }
+}

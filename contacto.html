@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Curso de HTML5 y CSS3 - Contacto</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contacto.css">
@@ -16,10 +17,18 @@
         </header>
 
         <nav>
+            <a href="#"></a> 
             <ul>
                 <li id="contenidos"><a href="index.html">Contenidos</a></li>
-                <li id="videos"><a href="videos.html">Vídeos</a></li>
-                <li id="contacto">Contacto</li>
+                <li id="videos">
+                    <a href="videos.html">Vídeos</a>
+                    <ul>
+                        <li><a href="serpiente.html">Serpiente</a></li>
+                        <li><a href="videos.html">Vídeo 2</a></li>
+                        <li><a href="videos.html">Vídeo 3</a></li>
+                    </ul>
+                </li>
+                <li id="contacto"><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
 
@@ -29,7 +38,7 @@
                 <form id="formContacto" action="#" method="post" >
                     
                     <input type="text" id="nombre" name="nombre" placeholder="Escriba su nombre" required list="listaNombres">
-                    <label></label> <datalist id="listaNombres">
+                    <datalist id="listaNombres">
                         <option value="alex">
                         <option value="juan">
                         <option value="ana">
@@ -37,8 +46,7 @@
                     </datalist>
 
                     <input type="email" id="email" name="email" placeholder="Escriba su email" required>
-                    <label></label>
-
+                    
                     <textarea id="mensaje" name="mensaje" placeholder="Su mensaje..." required></textarea>
 
                    <button type="submit" id="enviar">Enviar</button>
@@ -47,9 +55,12 @@
         </main>
 
         <footer id="footer">
-            <p>Danica Vargas Arévalo &copy; 2026. Curso de HTML5 y CSS3.</p>
+            <p>Danica Vargas Arévalo &copy; 2026. Curso de HTML5 y CSS3.<br />
+                Impartido para: <a href="#">CEFIRE - Específico de Formación Profesional</a></p>
         </footer>
     </div>
+    
     <script src="scripts/contacto.js"></script>
+    <script src="scripts/menu.js"></script>
 </body>
 </html>
